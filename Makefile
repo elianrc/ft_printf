@@ -6,7 +6,7 @@
 #    By: erc <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/03 08:29:24 by erc               #+#    #+#              #
-#    Updated: 2020/08/03 08:29:26 by erc              ###   ########.fr        #
+#    Updated: 2020/08/03 16:40:46 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ OBJS=ft*.o
 INCLUDES=./
 
 all:$(NAME)
+	@echo Compiling $(NAME)...
 
 $(NAME):
 	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
@@ -28,9 +29,11 @@ $(NAME):
 bonus: re
 
 clean:
+	@echo Deleting Objects...
 	@/bin/rm -f $(OBJS)
 
 fclean: clean
+	@echo Deleting $(NAME)...
 	@/bin/rm -f $(NAME)
 
 re: fclean all
