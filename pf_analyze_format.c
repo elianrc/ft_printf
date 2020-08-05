@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 21:09:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/04 21:15:50 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/05 12:16:13 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,23 @@
 **that is after the '%' and act accordingly.
 */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
 
-void	ft_analyze_format(const char *format)
+void	pf_analyze_format(t_info *info)
 {
-	pf_analyze_flags(format);
-	if (*format == 'c')
-	if (*format == 's')
-	if (*format == 'p')
-	if (*format == 'd')
-	if (*format == 'i')
-	if (*format == 'u')
-	if (*format == 'x')
-	if (*format == 'X')
-	if (*format == '%')
+	if (*info->format == 'c')
+	{
+		char c;
+		
+		c = va_arg(info->ap, int);
+		ft_putchar_fd(c, 1);
+	}
+	// if (*info->format == 's')
+	// if (*info->format == 'p')
+	// if (*finfo->ormat == 'd')
+	// if (*info->format == 'i')
+	// if (*info->format == 'u')
+	// if (*info->format == 'x')
+	// if (*info->format == 'X')
+	// if (*info->format == '%')
 }

@@ -19,8 +19,7 @@ int main(void)
 
 	printf("\n-------------------------------------\n--------  Testing ft_printf  --------\n-------------------------------------\n\n");
 
-	char *test = "F L A G S\n";
-	printf("This is usign: %s", test);
+	
 
 	return (0);
 }
