@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_info.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/04 21:18:24 by erc              ###   ########.fr       */
+/*   Created: 2020/08/04 21:05:14 by erc               #+#    #+#             */
+/*   Updated: 2020/08/04 21:06:07 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_PRINTF_INFO
+# define FT_PRINTF_INFO
 
-# include "./libft/libft.h"
-# include "ft_printf_info.h"
-# include <stdarg.h>
-# include <unistd.h>
 
-int		ft_printf(const char *format, ...);
-void	ft_format_analyzer(const char *format);
-void	ft_flag_check(const char *format);
 
 #endif
