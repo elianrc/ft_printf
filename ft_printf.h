@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/04 21:18:24 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/05 09:58:33 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 # define FT_PRINTF_H
 
 # include "./libft/libft.h"
-# include "ft_printf_info.h"
 # include <stdarg.h>
 # include <unistd.h>
 
 int		ft_printf(const char *format, ...);
-void	ft_format_analyzer(const char *format);
-void	ft_flag_check(const char *format);
+void    pf_analyze_format(t_info info);
+void    pf_analyze_flags(t_info info);
+
+typedef struct		s_info
+{
+	va_list		ap;
+	const char	*format;
+	char		flags[5];
+	int		width;
+	int		precision;
+
+}			t_info
 
 #endif
