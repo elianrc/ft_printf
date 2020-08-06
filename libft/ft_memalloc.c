@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 12:08:08 by erc              ###   ########.fr       */
+/*   Created: 2020/08/06 11:49:14 by erc               #+#    #+#             */
+/*   Updated: 2020/08/06 11:49:15 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "./libft/libft.h"
-# include <stdarg.h>
-# include <unistd.h>
-
-typedef struct		s_info
+void	*ft_memalloc(size_t size)
 {
-	va_list		ap;
-	const char	*format;
-	int			total_written;
-}					t_info;
+	void	*new;
 
-int		ft_printf(const char *format, ...);
-void	pf_analyze_format(t_info *finfo);
-
-#endif
+	if (!(new = malloc(size)))
+		return (NULL);
+	ft_bzero(new, size);
+	return (new);
+}
