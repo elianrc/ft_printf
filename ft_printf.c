@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:47:22 by erc               #+#    #+#             */
-/*   Updated: 2020/08/05 12:25:58 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/05 23:49:21 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 int	ft_printf(const char *format, ...)
 {
-	t_info	*info;
+	t_info	*finfo;
 
 	if (!format)
 		return (-1);
-	va_start(info->ap, format);
-	info->format = format;
-	while (*info->format)
+	finfo = NULL;
+	va_start(finfo->ap, format);
+	finfo->format = format;
+	while (*finfo->format)
 	{
-		while (*info->format && *info->format != '%')
+		while (*finfo->format && *finfo->format != '%')
 		{
-			write(1, info->format, 1);
-			info->total_written++;
+			write(1, finfo->format, 1);
+			finfo->total_written++;
 		}
-		if (*info->format == '%')
-			pf_analyze_format(info->format++);
+		if (*finfo->format == '%')
+			pf_analyze_format(finfo);
 	}
-	va_end(info->ap);
-	return (info->total_written);
+	va_end(finfo->ap);
+	return (finfo->total_written);
 }

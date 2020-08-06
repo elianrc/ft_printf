@@ -6,15 +6,15 @@
 #    By: erc <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/03 08:29:24 by erc               #+#    #+#              #
-#    Updated: 2020/08/03 16:40:46 by erc              ###   ########.fr        #
+#    Updated: 2020/08/05 23:50:11 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
 
-SRCS=./libft/ft*.c ft*.c
+SRCS=./libft/ft*.c ft*.c pf*.c
 
-OBJS=ft*.o
+OBJS=ft*.o pf*.o
 
 INCLUDES=./
 

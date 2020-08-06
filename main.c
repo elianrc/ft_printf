@@ -19,7 +19,7 @@ int main(void)
 
 	printf("\n-------------------------------------\n--------  Testing ft_printf  --------\n-------------------------------------\n\n");
 
-	
+	ft_printf("Hello\n");
 
 	return (0);
 }

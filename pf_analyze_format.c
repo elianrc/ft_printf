@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 21:09:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/05 12:16:13 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/05 23:48:14 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 #include "ft_printf.h"
 
-void	pf_analyze_format(t_info *info)
+void	pf_analyze_format(t_info *finfo)
 {
-	if (*info->format == 'c')
+	if (*finfo->format == 'c')
 	{
 		char c;
 		
-		c = va_arg(info->ap, int);
+		c = va_arg(finfo->ap, int);
 		ft_putchar_fd(c, 1);
 	}
 	// if (*info->format == 's')
