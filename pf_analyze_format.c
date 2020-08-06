@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 21:09:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 12:12:17 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/06 14:33:34 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@
 
 void	pf_analyze_format(t_info *finfo)
 {
+	finfo->format++;
 	if (*finfo->format == 'c')
 	{
-		char c;
-		
-		c = va_arg(finfo->ap, int);
-		ft_putchar_fd(c, 1);
+		pf_solve_character(finfo);
 	}
 	// if (*info->format == 's')
 	// if (*info->format == 'p')

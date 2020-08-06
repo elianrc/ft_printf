@@ -15,11 +15,11 @@ int	ft_printf(const char *format, ...);
 
 int main(void)
 {
-	system("clear");
+	//system("clear");
 
 	printf("\n-------------------------------------\n--------  Testing ft_printf  --------\n-------------------------------------\n\n");
-
-	ft_printf("Hello\n");
+	char c = 'X';
+	ft_printf("Hello %c\n", c);
 
 	return (0);
 }
