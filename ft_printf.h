@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 14:31:54 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/06 21:29:57 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ typedef struct		s_info
 int		ft_printf(const char *format, ...);
 void	pf_analyze_format(t_info *finfo);
 void	pf_solve_character(t_info *finfo);
+void	pf_solve_string(t_info *finfo);
+void	pf_solve_integer(t_info *finfo);
 
 #endif

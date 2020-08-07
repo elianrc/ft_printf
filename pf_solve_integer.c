@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_solve_character.c                               :+:      :+:    :+:   */
+/*   pf_solve_integer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/06 14:23:15 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 14:37:02 by erc              ###   ########.fr       */
+/*   Created: 2020/08/06 21:30:19 by erc               #+#    #+#             */
+/*   Updated: 2020/08/06 21:43:20 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	pf_solve_character(t_info *finfo)
+void	pf_solve_integer(t_info *finfo)
 {
-	char	c;
+	char	*num;
 
-	c = va_arg(finfo->ap, int);
-	ft_putchar_fd(c, 1);
-    finfo->total_written++;
+	num = ft_itoa(va_arg(finfo->ap, long long));
+	while (*num)
+	{
+		ft_putchar_fd(*num, 1);
+		finfo->total_written++;
+		num++;
+	}
 	finfo->format++;
 }
