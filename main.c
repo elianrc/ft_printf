@@ -47,13 +47,23 @@ int main(void)
 	printf("--------------\n\n\n\n");
 	//_______________________
 
-	//_____SPECFIER i & d ___
+	//_____ SPECFIER u ______
 	printf("--- spec u ---\n");
 	unsigned int un1 = 1424;
 	ft_printf("Total written(ft_printf): %d\n\n", (ft_printf("This is unsigned integer: %u\n", un1)));
 	printf("Total written(printf): %d\n", (printf("This is unsigned integer: %u\n", un1)));
 	printf("--------------\n\n\n\n");
 	//_______________________
+
+	//____ SPECFIER x & x ___
+	printf("-- spec x&X --\n");
+	int	hex1 = 2124;
+	int	hex2 = 2530;
+	ft_printf("Total written(ft_printf): %d\n\n", (ft_printf("This is hexadecimal: %x & %X\n", hex1, hex2)));
+	printf("Total written(printf): %d\n", (printf("This is hexadecimal: %x & %X\n", hex1, hex2)));
+	printf("--------------\n\n\n\n");
+	//_______________________
+
 
 	ft_printf("This is percent: %%\n");
 	ft_printf("This is error: %z\n\n");
