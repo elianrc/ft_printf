@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+**This file contains two functions:
+**-pf_solve_character
+**-pf_solve_string
+*/
+
 #include "ft_printf.h"
 
 void	pf_solve_character(t_info *finfo)

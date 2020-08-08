@@ -18,21 +18,44 @@ int main(void)
 
 	printf("\n-------------------------------------\n--------  Testing ft_printf  --------\n-------------------------------------\n\n");
 
+	//_____SPECIFIER C ______
+
+	printf("--- spec c ---\n");
 	char c = 'X';
-	ft_printf("This is char: %c\n\n",c);
+	ft_printf("Total written(ft_printf): %d\n\n", (ft_printf("This is char: %c\n",c)));
+	printf("Total written(printf): %d\n", (printf("This is char: %c\n",c)));
+	printf("--------------\n\n\n\n");
 
+	//_______________________
+
+	//_____SPECFIER S _______
+
+	printf("--- spec s ---\n");
 	char *str = "I love Chasty!";
-	ft_printf("This is string: %s\n\n", str);
+	ft_printf("Total written(ft_printf): %d\n\n", (ft_printf("This is string: %s\n", str)));
+	printf("Total written(printf): %d\n", (printf("This is string: %s\n", str)));
+	printf("--------------\n\n\n\n");
 
+	//_______________________
+
+	//_____SPECFIER i & d ___
+	printf("-- spec i&d --\n");
 	int	n1 = 1124;
 	int n2 = 411;
-	ft_printf("This is integer: %d & %i\n\n", n1, n2);
+	ft_printf("Total written(ft_printf): %d\n\n", (ft_printf("This is integer: %d & %i\n", n1, n2)));
+	printf("Total written(printf): %d\n", (printf("This is integer: %d & %i\n", n1, n2)));
+	printf("--------------\n\n\n\n");
+	//_______________________
 
+	//_____SPECFIER i & d ___
+	printf("--- spec u ---\n");
 	unsigned int un1 = 1424;
-	ft_printf("This is unsigned integer: %u\n\n", un1);
+	ft_printf("Total written(ft_printf): %d\n\n", (ft_printf("This is unsigned integer: %u\n", un1)));
+	printf("Total written(printf): %d\n", (printf("This is unsigned integer: %u\n", un1)));
+	printf("--------------\n\n\n\n");
+	//_______________________
 
-	ft_printf("This is percent: %%\n\n");
-
+	ft_printf("This is percent: %%\n");
 	ft_printf("This is error: %z\n\n");
 
 	return (0);

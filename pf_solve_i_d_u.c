@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+**This file contains two functions:
+**-pf_solve_integer (%i & %d are treated equal)
+**-pf_solve_unsigned
+*/
+
 #include "ft_printf.h"
 
 void	pf_solve_integer(t_info *finfo)

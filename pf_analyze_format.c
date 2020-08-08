@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 21:09:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/08 00:38:17 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/08 10:22:52 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	pf_analyze_format(t_info *finfo)
 		pf_solve_integer(finfo);
 	else if (*finfo->format == 'u')
 		pf_solve_unsigned(finfo);
-	//else if (*finfo->format == 'x' || *finfo->format == 'X')
+	else if (*finfo->format == 'x' || *finfo->format == 'X')
+		pf_solve_hexadecimal(finfo);
 	else if (*finfo->format == '%')
 		pf_solve_percent(finfo);
 	else
