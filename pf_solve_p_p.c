@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_solve_character.c                               :+:      :+:    :+:   */
+/*   pf_solve_p_p.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/06 14:23:15 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 14:37:02 by erc              ###   ########.fr       */
+/*   Created: 2020/08/08 00:39:43 by erc               #+#    #+#             */
+/*   Updated: 2020/08/08 00:39:47 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	pf_solve_character(t_info *finfo)
+void	pf_solve_percent(t_info *finfo)
 {
-	char	c;
-
-	c = va_arg(finfo->ap, int);
-	ft_putchar_fd(c, 1);
-    finfo->total_written++;
+	ft_putchar_fd('%', 1);
+	finfo->total_written++;
 	finfo->format++;
 }

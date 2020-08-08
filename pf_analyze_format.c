@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 21:09:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 21:40:40 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/08 00:38:17 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,13 @@ void	pf_analyze_format(t_info *finfo)
 	// if (*info->format == 'p')
 	else if (*finfo->format == 'd' || *finfo->format == 'i')
 		pf_solve_integer(finfo);
-	// if (*info->format == 'u')
-	// if (*info->format == 'x')
-	// if (*info->format == 'X')
-	// if (*info->format == '%')
+	else if (*finfo->format == 'u')
+		pf_solve_unsigned(finfo);
+	//else if (*finfo->format == 'x' || *finfo->format == 'X')
+	else if (*finfo->format == '%')
+		pf_solve_percent(finfo);
+	else
+	{
+		ft_putstr_fd("[ERROR] - specifier not found or supported -> ", 1);
+	}
 }

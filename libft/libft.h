@@ -73,6 +73,7 @@ int					ft_atoi(const char *nptr);
 int					ft_atoi_base(const char *str, int base);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int n, int base);
+char				*ft_utoa(unsigned int n);
 size_t				ft_wordcounter(char const *s, char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);

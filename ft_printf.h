@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 21:29:57 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/07 23:09:53 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ void	pf_analyze_format(t_info *finfo);
 void	pf_solve_character(t_info *finfo);
 void	pf_solve_string(t_info *finfo);
 void	pf_solve_integer(t_info *finfo);
+void	pf_solve_unsigned(t_info *finfo);
+void	pf_solve_percent(t_info *finfo);
 
 #endif

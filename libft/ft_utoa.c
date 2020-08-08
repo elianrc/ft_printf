@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_solve_integer.c                                 :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/06 21:30:19 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 21:43:20 by erc              ###   ########.fr       */
+/*   Created: 2020/08/08 00:10:08 by erc               #+#    #+#             */
+/*   Updated: 2020/08/08 00:10:09 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	pf_solve_integer(t_info *finfo)
+char	*ft_utoa(unsigned int n)
 {
-	char	*num;
+	int				len;
+	char			*str;
+	unsigned int	param;
 
-	num = ft_itoa(va_arg(finfo->ap, long long));
-	while (*num)
+	len = 1;
+	param = n;
+	while (param >= 10)
 	{
-		ft_putchar_fd(*num, 1);
-		finfo->total_written++;
-		num++;
+		len++;
+		param /= 10;
 	}
-	finfo->format++;
+	if (!(str = (char *)malloc(sizeof(*str) * (len + 1))))
+		return (NULL);
+	str[len] = '\0';
+	while (n >= 10)
+	{
+		str[--len] = n % 10 + 48;
+		n /= 10;
+	}
+	str[--len] = n % 10 + 48;
+	return (str);
 }

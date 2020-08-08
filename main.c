@@ -9,7 +9,6 @@
 
 #include "ft_printf.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 int	ft_printf(const char *format, ...);
 
@@ -29,7 +28,12 @@ int main(void)
 	int n2 = 411;
 	ft_printf("This is integer: %d & %i\n\n", n1, n2);
 
-	
+	unsigned int un1 = 1424;
+	ft_printf("This is unsigned integer: %u\n\n", un1);
+
+	ft_printf("This is percent: %%\n\n");
+
+	ft_printf("This is error: %z\n\n");
 
 	return (0);
 }
