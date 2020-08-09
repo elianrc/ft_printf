@@ -6,14 +6,15 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 11:13:18 by erc               #+#    #+#             */
-/*   Updated: 2020/08/08 11:17:17 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/08 20:17:42 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**This file contains two functions:
+**This file contains three functions:
 **-pf_solve_integer (%i & %d are treated equal)
 **-pf_solve_unsigned
+**-pf_solve_hexadecimal (x & X are treated equal)
 */
 
 #include "ft_printf.h"
@@ -42,7 +43,7 @@ void	pf_solve_hexadecimal(t_info *finfo)
 {
 	char	*num;
 
-	num = ft_itoa_base(va_arg(finfo->ap, int), 16);
+	num = ft_utoa_hex(va_arg(finfo->ap, unsigned int), finfo);
 	ft_putstr_fd(num, 1);
 	finfo->total_written += ft_strlen(num);
 	finfo->format++;

@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:47:22 by erc               #+#    #+#             */
-/*   Updated: 2020/08/06 12:02:34 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/08 13:29:27 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_printf(const char *format, ...)
 {
 	t_info	*finfo;
+	int	total_written;
 
 	if (!format)
 		return (-1);
@@ -33,5 +34,7 @@ int	ft_printf(const char *format, ...)
 			pf_analyze_format(finfo);
 	}
 	va_end(finfo->ap);
-	return (finfo->total_written);
+	total_written = finfo->total_written;
+	free(finfo);
+	return (total_written);
 }

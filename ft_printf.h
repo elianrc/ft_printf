@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/08 11:16:56 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/08 20:16:45 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct		s_info
 	int			total_written;
 }					t_info;
 
+char	*ft_utoa_hex(unsigned int, t_info *finfo);
 int		ft_printf(const char *format, ...);
 void	pf_analyze_format(t_info *finfo);
 void	pf_solve_character(t_info *finfo);

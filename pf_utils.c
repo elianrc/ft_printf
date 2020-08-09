@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_solve_c_s.c                                     :+:      :+:    :+:   */
+/*   pf_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/08 00:38:45 by erc               #+#    #+#             */
-/*   Updated: 2020/08/08 11:53:42 by erc              ###   ########.fr       */
+/*   Created: 2020/08/08 18:31:40 by erc               #+#    #+#             */
+/*   Updated: 2020/08/08 20:19:26 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**This file contains two functions:
-**-pf_solve_character
-**-pf_solve_string
-*/
-
 #include "ft_printf.h"
 
-void	pf_solve_character(t_info *finfo)
+char	*ft_utoa_hex(unsigned int n, t_info *finfo)
 {
-	char	c;
+	char					*str;
+	unsigned int			len;
+	unsigned int			param;
 
-	c = va_arg(finfo->ap, int);
-	ft_putchar_fd(c, 1);
-	finfo->total_written++;
-	finfo->format++;
-}
-
-void	pf_solve_string(t_info *finfo)
-{
-	char	*str;
-
-	str = va_arg(finfo->ap, char *);
-	ft_putstr_fd(str, 1);
-	finfo->total_written += ft_strlen(str);
-	finfo->format++;
+	len = 1;
+	param = n;
+	while (param >= 16)
+	{
+		len++;
+		param /= 16;
+	}
+	if (!(str = (char *)malloc(sizeof(*str) * (len + 1))))
+		return (NULL);
+	str[len] = '\0';
+	while (n)
+	{
+		param = n % 16;
+		str[--len] = param < 10 ? param + 48 : param % 10 + *finfo->format - 23;
+		n /= 16;
+	}
+	return (str);
 }
