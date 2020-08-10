@@ -15,7 +15,7 @@
 int	ft_printf(const char *format, ...)
 {
 	t_info	*finfo;
-	int	total_written;
+	int		total_written;
 
 	if (!format)
 		return (-1);

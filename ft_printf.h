@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/08 20:16:45 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/09 23:25:54 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ typedef struct		s_info
 	int			total_written;
 }					t_info;
 
-char	*ft_utoa_hex(unsigned int, t_info *finfo);
-int		ft_printf(const char *format, ...);
+char	*ft_utoa_hex(unsigned int n, t_info *finfo);
+int	ft_printf(const char *format, ...);
 void	pf_analyze_format(t_info *finfo);
 void	pf_solve_character(t_info *finfo);
 void	pf_solve_string(t_info *finfo);
@@ -33,5 +33,6 @@ void	pf_solve_integer(t_info *finfo);
 void	pf_solve_unsigned(t_info *finfo);
 void	pf_solve_hexadecimal(t_info *finfo);
 void	pf_solve_percent(t_info *finfo);
+void	pf_solve_pointer(t_info *finfo);
 
 #endif
