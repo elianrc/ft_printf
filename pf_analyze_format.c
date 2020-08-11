@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 21:09:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/08 10:22:52 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/10 21:42:19 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	pf_analyze_format(t_info *finfo)
 		pf_solve_character(finfo);
 	else if (*finfo->format == 's')
 		pf_solve_string(finfo);
-	// if (*info->format == 'p')
+	else if (*finfo->format == 'p')
+		pf_solve_pointer(finfo);
 	else if (*finfo->format == 'd' || *finfo->format == 'i')
 		pf_solve_integer(finfo);
 	else if (*finfo->format == 'u')

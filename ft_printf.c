@@ -6,9 +6,16 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:47:22 by erc               #+#    #+#             */
-/*   Updated: 2020/08/08 13:29:27 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/10 13:43:31 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**__Core of the function__
+**-Understanding <stdarg.h> is a first.
+**-"finfo" stands for "format info".
+**-Only working on mandatory part for now.
+*/
 
 #include "ft_printf.h"
 

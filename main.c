@@ -64,6 +64,14 @@ int main(void)
 	printf("--------------\n\n\n\n");
 	//_______________________
 
+	//_____ SPECFIER p ______
+	printf("--- spec p ---\n\n");
+	char a;
+	char *p = &a;
+	ft_printf("Total written(ft_printf): %d\n\n", (ft_printf("Pointer address: %p\n", &a)));
+	printf("Total written(printf): %d\n", (printf("Pointer address: %p\n", &a)));
+	printf("\n--------------\n\n\n\n");
+	//_______________________
 
 	ft_printf("This is percent: %%\n");
 	ft_printf("This is error: %z\n\n");
