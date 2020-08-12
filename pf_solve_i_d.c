@@ -6,9 +6,13 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:38:56 by erc               #+#    #+#             */
-/*   Updated: 2020/08/09 23:39:08 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/11 22:47:12 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**Converts a signed integer to decimal representation.
+*/
 
 #include "ft_printf.h"
 

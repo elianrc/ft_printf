@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 18:31:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/10 21:51:17 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/11 11:07:36 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ char	*ft_utoa_hex(unsigned int n, t_info *finfo)
 
 char	*ft_utoa_hex_p(unsigned long long int num)
 {
-	char				*str;
-	unsigned int		len;
+	char					*str;
+	unsigned int			len;
 	unsigned long long int	param;
 
 	len = 1;
@@ -63,5 +63,4 @@ char	*ft_utoa_hex_p(unsigned long long int num)
 		num /= 16;
 	}
 	return (str);
-
 }

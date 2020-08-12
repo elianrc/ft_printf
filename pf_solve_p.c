@@ -6,14 +6,18 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 00:39:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/11 10:59:38 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/11 22:49:27 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 **This file contains two functions:
 **-pf_solve_percent
+**______Prints %
 **-pf_solve_pointer
+**______Writes an implementation defined
+**______character sequence defining a pointer.
+**______(or Pointer Address)
 */
 
 #include "ft_printf.h"

@@ -6,9 +6,13 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:40:03 by erc               #+#    #+#             */
-/*   Updated: 2020/08/09 23:45:38 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/11 22:51:06 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**Converts an unsigned integer to hexadecimal representation.
+*/
 
 #include "ft_printf.h"
 

@@ -6,9 +6,13 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:39:23 by erc               #+#    #+#             */
-/*   Updated: 2020/08/09 23:39:39 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/11 22:50:37 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**Converts an unsigned integer to decimal representation.
+*/
 
 #include "ft_printf.h"
 
