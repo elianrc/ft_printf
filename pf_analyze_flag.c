@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_solve_x.c                                       :+:      :+:    :+:   */
+/*   pf_analyze_flag.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/09 23:40:03 by erc               #+#    #+#             */
-/*   Updated: 2020/08/11 22:55:09 by erc              ###   ########.fr       */
+/*   Created: 2020/08/12 14:22:31 by erc               #+#    #+#             */
+/*   Updated: 2020/08/14 00:11:04 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**Converts an unsigned integer to hexadecimal representation.
+**%[flags][width][.precision][length]specifier
 */
 
 #include "ft_printf.h"
 
-void	pf_solve_hexadecimal(t_info *finfo)
+void	pf_analyze_flag(t_info *finfo)
 {
-	char	*num;
-
-	num = ft_utoa_hex_x(va_arg(finfo->ap, unsigned int), finfo);
-	ft_putstr_fd(num, 1);
-	finfo->total_written += ft_strlen(num);
-	finfo->format++;
+	if (*finfo->format == '-')
+	{
+		finfo->flag_minus = 1;
+		finfo->format++;
+	}
+	if (*finfo->format == '0')
+	{
+		finfo->flag_zero = 1;
+		finfo->format++;
+	}
+	if (*finfo->format == '.')
+	{
+		finfo->precision = 1;
+		finfo->format++;
+	}
+	if (*finfo->format == '*')
+	{
+		finfo->width = '*';
+		finfo->format++;
+	}
 }

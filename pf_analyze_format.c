@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 21:09:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/10 21:42:19 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/14 00:53:07 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 void	pf_analyze_format(t_info *finfo)
 {
 	finfo->format++;
+	pf_reset_flags(finfo);
+	pf_analyze_flag(finfo);
+	pf_set_width(finfo);
 	if (*finfo->format == 'c')
 		pf_solve_character(finfo);
 	else if (*finfo->format == 's')
@@ -36,6 +39,6 @@ void	pf_analyze_format(t_info *finfo)
 		pf_solve_percent(finfo);
 	else
 	{
-		ft_putstr_fd("[ERROR] - specifier not found or supported -> ", 1);
+		ft_putstr_fd("[ERROR]->", 1);
 	}
 }

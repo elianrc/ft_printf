@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:47:22 by erc               #+#    #+#             */
-/*   Updated: 2020/08/10 13:43:31 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/12 23:14:46 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_printf(const char *format, ...)
 	{
 		while (*finfo->format && *finfo->format != '%')
 		{
-			write(1, finfo->format, 1);
+			ft_putchar_fd(*finfo->format, 1);
 			finfo->total_written++;
 			finfo->format++;
 		}

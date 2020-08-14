@@ -6,13 +6,13 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 18:31:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/11 11:07:36 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/13 13:21:56 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_utoa_hex(unsigned int n, t_info *finfo)
+char	*ft_utoa_hex_x(unsigned int n, t_info *finfo)
 {
 	char					*str;
 	unsigned int			len;
@@ -63,4 +63,12 @@ char	*ft_utoa_hex_p(unsigned long long int num)
 		num /= 16;
 	}
 	return (str);
+}
+
+void	pf_reset_flags(t_info *finfo)
+{
+	finfo->flag_minus = 0;
+	finfo->flag_zero = 0;
+	finfo->width = 0;
+	finfo->precision = 0;
 }
