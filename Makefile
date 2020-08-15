@@ -6,7 +6,7 @@
 #    By: erc <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/03 08:29:24 by erc               #+#    #+#              #
-#    Updated: 2020/08/10 21:03:18 by erc              ###   ########.fr        #
+#    Updated: 2020/08/14 23:36:46 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ all:$(NAME)
 	@echo Compiling $(NAME)...
 
 $(NAME):
-	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+	@gcc -g3 -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 

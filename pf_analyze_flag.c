@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 14:22:31 by erc               #+#    #+#             */
-/*   Updated: 2020/08/14 00:11:04 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/14 23:11:20 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,5 @@ void	pf_analyze_flag(t_info *finfo)
 	{
 		finfo->flag_zero = 1;
 		finfo->format++;
-	}
-	if (*finfo->format == '.')
-	{
-		finfo->precision = 1;
-		finfo->format++;
-	}
-	if (*finfo->format == '*')
-	{
-		finfo->width = '*';
-		finfo->format++;
-	}
+	}	
 }

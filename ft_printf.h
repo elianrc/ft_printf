@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/14 00:53:29 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/14 23:24:22 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ int					ft_printf(const char *format, ...);
 void				pf_analyze_format(t_info *finfo);
 void				pf_reset_flags(t_info *finfo);
 void				pf_analyze_flag(t_info *finfo);
-void				pf_print_width(t_info *finfo, int length);
 void				pf_set_width(t_info *finfo);
+void				pf_print_width(t_info *finfo, int length);
+void				pf_set_precision(t_info *finfo);
 void				pf_solve_character(t_info *finfo);
 void				pf_solve_string(t_info *finfo);
+void				pf_printf_string_with_precision(t_info *finfo, int precision);
 void				pf_solve_integer(t_info *finfo);
 void				pf_solve_unsigned(t_info *finfo);
 void				pf_solve_hexadecimal(t_info *finfo);

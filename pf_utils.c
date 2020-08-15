@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 18:31:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/13 13:21:56 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/14 23:19:20 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,17 @@ void	pf_reset_flags(t_info *finfo)
 	finfo->flag_zero = 0;
 	finfo->width = 0;
 	finfo->precision = 0;
+}
+
+void	pf_printf_string_with_precision(t_info *finfo, int precision)
+{
+	int i;
+
+	i = 0;
+	while(finfo->format[i] && i < precision)
+	{
+		ft_putchar_fd(*finfo->format, 1);
+		i++;
+		finfo->total_written++;
+	}
 }
