@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 00:00:52 by erc               #+#    #+#             */
-/*   Updated: 2020/08/14 21:49:43 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/15 18:59:10 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	pf_set_width(t_info *finfo)
 	if (*finfo->format == '*')
 	{
 		finfo->width = va_arg(finfo->ap, int);
+		finfo->format++;
 	}
 	else if (*finfo->format >= '0' && *finfo->format <= '9')
 	{
@@ -31,7 +32,7 @@ void	pf_set_width(t_info *finfo)
 
 void	pf_print_width(t_info *finfo, int length)
 {
-	while (finfo->width != length)
+	while (finfo->width > length)
 	{
 		if (finfo->flag_zero == 1)
 		{
