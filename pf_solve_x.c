@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:40:03 by erc               #+#    #+#             */
-/*   Updated: 2020/08/17 21:10:42 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/18 10:07:04 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "ft_printf.h"
 
-char	*ft_utoa_hex_x(unsigned int n, t_info *finfo)
+char			*ft_utoa_hex_x(unsigned int n, t_info *finfo)
 {
 	char					*str;
 	unsigned int			len;

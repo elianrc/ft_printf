@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 00:39:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/17 21:10:56 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/18 10:07:16 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 #include "ft_printf.h"
 
-char	*ft_utoa_hex_p(unsigned long long int num)
+char			*ft_utoa_hex_p(unsigned long long int num)
 {
 	char					*str;
 	unsigned int			len;
