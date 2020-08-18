@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/15 00:35:36 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/17 21:09:01 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct		s_info
 	int			flag_zero;
 	int			width;
 	int			precision;
+	int			null;
 	int			total_written;
 }					t_info;
 
@@ -37,9 +38,12 @@ void				pf_analyze_flag(t_info *finfo);
 void				pf_set_width(t_info *finfo);
 void				pf_print_width(t_info *finfo, int length);
 void				pf_set_precision(t_info *finfo);
+void				print_minus_true(char *str, t_info *finfo);
+void				printf_minus_false(char *str, t_info *finfo);
 void				pf_solve_character(t_info *finfo);
 void				pf_solve_string(t_info *finfo);
-void				pf_printf_string_with_precision(t_info *finfo, char *str, int precision);
+void				pf_printf_string_with_precision(t_info *finfo,
+		char *str, int precision);
 void				pf_solve_integer(t_info *finfo);
 void				pf_solve_unsigned(t_info *finfo);
 void				pf_solve_hexadecimal(t_info *finfo);

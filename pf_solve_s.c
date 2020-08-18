@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:36:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/15 21:58:18 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/18 10:02:23 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,14 @@
 
 #include "ft_printf.h"
 
-static	void	print_minus_true(char *str, t_info *finfo)
+static	void	pf_flag_checker_s(char *str, t_info *finfo)
 {
-	if (finfo->precision > 0)
-	{
-		pf_printf_string_with_precision(finfo, str, finfo->precision);
-		pf_print_width(finfo, finfo->precision);
-	}
-	else
-	{
-		ft_putstr_fd(str, 1);
-		pf_print_width(finfo, ft_strlen(str));
-		finfo->total_written += ft_strlen(str);
-	}
-}
-
-static	void	printf_minus_false(char *str, t_info *finfo)
-{
-	if (finfo->precision > 0)
-	{
-		pf_print_width(finfo, finfo->precision);
-		pf_printf_string_with_precision(finfo, str, finfo->precision);
-	}
-	else
-	{
-		pf_print_width(finfo, ft_strlen(str));
-		ft_putstr_fd(str, 1);
-		finfo->total_written += ft_strlen(str);
-	}
+	if (finfo->width <= (int)ft_strlen(str - finfo->precision))
+		finfo->width = 0;
+	if (finfo->precision > (int)ft_strlen(str))
+		finfo->precision = (int)ft_strlen(str);
+	if (finfo->flag_zero == 1)
+		finfo->flag_zero = 0;
 }
 
 void			pf_solve_string(t_info *finfo)
@@ -53,20 +33,14 @@ void			pf_solve_string(t_info *finfo)
 	str = va_arg(finfo->ap, char *);
 	if (!str)
 	{
-		finfo->null = 1;
 		str = "(null)";
+		if (finfo->precision < 6 && finfo->precision >= 0)
+			str = "";
 	}
-	if (finfo->null != 1)
-	{
-		if (finfo->flag_minus == 1)
-			print_minus_true(str, finfo);
-		else
-			printf_minus_false(str, finfo);
-	}
+	pf_flag_checker_s(str, finfo);
+	if (finfo->flag_minus == 1)
+		print_minus_true(str, finfo);
 	else
-	{
-		ft_putstr_fd(str, 1);
-		finfo->total_written += ft_strlen(str);
-	}
+		printf_minus_false(str, finfo);
 	finfo->format++;
 }
