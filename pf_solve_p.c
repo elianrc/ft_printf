@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 00:39:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/18 10:07:16 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/20 16:50:11 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,24 @@ char			*ft_utoa_hex_p(unsigned long long int num)
 
 void			pf_solve_pointer(t_info *finfo)
 {
-	char		*num;
+	char		*str;
+	void		*address;
 
-	num = ft_utoa_hex_p(va_arg(finfo->ap, unsigned long long int));
-	if (finfo->width < ((int)ft_strlen(num) - 2))
+	address = va_arg(finfo->ap, void *);
+	if (address == NULL)
+	{
+		str = "(nil)";
+		finfo->null = 1;
+	}
+	if (finfo->null == 0)
+		str = ft_utoa_hex_p((unsigned long long int)address);
+	if (finfo->width < ((int)ft_strlen(str) - 2))
 		finfo->width = 0;
 	if (finfo->flag_minus == 1)
-		print_minus_true(num, finfo);
+		print_minus_true(str, finfo);
 	else
-		printf_minus_false(num, finfo);
-	free(num);
+		printf_minus_false(str, finfo);
+	if (finfo->null == 0)
+		free(str);
 	finfo->format++;
 }
