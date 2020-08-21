@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:40:03 by erc               #+#    #+#             */
-/*   Updated: 2020/08/18 10:07:04 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/20 21:11:28 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ char			*ft_utoa_hex_x(unsigned int n, t_info *finfo)
 
 	len = 1;
 	param = n;
+	if (n == 0)
+	{
+		finfo->null = 1;
+		return ("0");
+	}
 	while (param >= 16)
 	{
 		len++;
@@ -41,34 +46,31 @@ char			*ft_utoa_hex_x(unsigned int n, t_info *finfo)
 	return (str);
 }
 
-static	void	pf_flag_checker_x(char *str, t_info *finfo)
+static	void	pf_flag_checker_x(int strlen, char *str, t_info *finfo)
 {
-	if (finfo->width <= (int)ft_strlen(str))
-		finfo->width = 0;
+	if (finfo->precision != -1 && finfo->precision < strlen && *str != '0')
+		finfo->precision = strlen;
 	if (finfo->flag_zero == 1 && finfo->flag_minus == 1)
-	{
 		finfo->flag_zero = 0;
-		finfo->precision = 0;
-	}
-	if (finfo->flag_minus == 1 && finfo->precision > 0)
-		finfo->precision = 0;
 	if (finfo->flag_zero == 1 && finfo->precision > 0)
-	{
 		finfo->flag_zero = 0;
-		finfo->precision = 0;
-	}
 }
 
 void			pf_solve_hexadecimal(t_info *finfo)
 {
-	char	*num;
+	char	*str;
+	int		strlen;
 
-	num = ft_utoa_hex_x(va_arg(finfo->ap, unsigned int), finfo);
-	pf_flag_checker_x(num, finfo);
+	str = ft_utoa_hex_x(va_arg(finfo->ap, unsigned int), finfo);
+	strlen = ft_strlen(str);
+	if (finfo->precision > strlen)
+		finfo->extra_zero = finfo->precision - strlen;
+	pf_flag_checker_x(strlen, str, finfo);
 	if (finfo->flag_minus == 1)
-		print_minus_true(num, finfo);
+		print_minus_true(str, finfo);
 	else
-		printf_minus_false(num, finfo);
-	free(num);
+		printf_minus_false(str, finfo);
+	if (finfo->null == 0)
+		free(str);
 	finfo->format++;
 }

@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:36:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/18 10:02:23 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/21 09:25:09 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void			pf_solve_string(t_info *finfo)
 		if (finfo->precision < 6 && finfo->precision >= 0)
 			str = "";
 	}
+	if (finfo->precision == 0)
+		str = "";
 	pf_flag_checker_s(str, finfo);
 	if (finfo->flag_minus == 1)
 		print_minus_true(str, finfo);

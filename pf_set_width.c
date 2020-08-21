@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 00:00:52 by erc               #+#    #+#             */
-/*   Updated: 2020/08/18 09:36:00 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/20 23:54:58 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	pf_set_width(t_info *finfo)
 
 void	pf_print_width(t_info *finfo, int length)
 {
-	while (finfo->width > length)
+	while (finfo->width > length && finfo->width != 0)
 	{
 		if (finfo->flag_zero == 1)
 		{

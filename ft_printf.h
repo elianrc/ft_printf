@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/17 21:09:01 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/21 09:44:58 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ typedef struct		s_info
 	int			flag_zero;
 	int			width;
 	int			precision;
+	int			extra_zero;
 	int			null;
+	int			negative;
 	int			total_written;
 }					t_info;
 
@@ -47,7 +49,7 @@ void				pf_printf_string_with_precision(t_info *finfo,
 void				pf_solve_integer(t_info *finfo);
 void				pf_solve_unsigned(t_info *finfo);
 void				pf_solve_hexadecimal(t_info *finfo);
-void				pf_solve_percent(t_info *finfo);
+void				pf_solve_perc(t_info *finfo);
 void				pf_solve_pointer(t_info *finfo);
 
 #endif
