@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:38:56 by erc               #+#    #+#             */
-/*   Updated: 2020/08/22 00:41:29 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/22 09:28:25 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,22 @@ static	void	pf_flag_checker_id(int strlen, char *str, t_info *finfo)
 		finfo->width = 0;
 }
 
+static	int		pf_check_negative_id(int num, t_info *finfo)
+{
+	if (num < 0)
+	{
+		if (num == INT_MIN)
+			finfo->width -= 1;
+		else
+		{
+			finfo->negative = 1;
+			num = num * -1;
+			finfo->width -= 1;
+		}
+	}
+	return (num);
+}
+
 void			pf_solve_integer(t_info *finfo)
 {
 	int		num;
@@ -81,17 +97,7 @@ void			pf_solve_integer(t_info *finfo)
 	char	*str;
 
 	num = va_arg(finfo->ap, int);
-	if (num < 0)
-	{
-		if (num == INT_MIN)
-			finfo->width -= 1;
-		else
-		{
-		finfo->negative = 1;
-		num = num * -1;
-		finfo->width -= 1;
-		}
-	}
+	num = pf_check_negative_id(num, finfo);
 	str = ft_itoa(num);
 	strlen = (int)ft_strlen(str);
 	if (finfo->precision > strlen)

@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/22 00:35:25 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/22 09:16:36 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ typedef struct		s_info
 	int			total_written;
 }					t_info;
 
-char				*ft_utoa_hex_x(unsigned int n, t_info *finfo);
-char				*ft_utoa_hex_p(unsigned long long int num);
 int					ft_printf(const char *format, ...);
 void				pf_analyze_format(t_info *finfo);
 void				pf_reset_flags(t_info *finfo);

@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:36:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/22 00:08:36 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/22 09:09:32 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void			pf_solve_string(t_info *finfo)
 	if (!str)
 	{
 		str = "(null)";
-		if ( !IS_MACOS && finfo->precision < 6 && finfo->precision >= 0)
+		if (!IS_MACOS && finfo->precision < 6 && finfo->precision >= 0)
 			str = "";
 	}
 	if (finfo->precision == 0)
