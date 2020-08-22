@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 18:31:40 by erc               #+#    #+#             */
-/*   Updated: 2020/08/20 17:39:18 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/21 13:49:45 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void	print_minus_true(char *str, t_info *finfo)
 {
 	if (finfo->precision >= 0)
 	{
-		ft_putnchar('0', finfo->extra_zero);
+		finfo->total_written += ft_putnchar('0', finfo->extra_zero);
 		pf_printf_string_with_precision(finfo, str, finfo->precision);
 		pf_print_width(finfo, finfo->precision);
 	}
 	else
 	{
 		ft_putstr_fd(str, 1);
-		pf_print_width(finfo, ft_strlen(str));
 		finfo->total_written += ft_strlen(str);
+		pf_print_width(finfo, ft_strlen(str));
 	}
 }
 
@@ -33,7 +33,7 @@ void	printf_minus_false(char *str, t_info *finfo)
 	if (finfo->precision >= 0)
 	{
 		pf_print_width(finfo, finfo->precision);
-		ft_putnchar('0', finfo->extra_zero);
+		finfo->total_written += ft_putnchar('0', finfo->extra_zero);
 		pf_printf_string_with_precision(finfo, str, finfo->precision);
 	}
 	else

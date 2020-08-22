@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:38:56 by erc               #+#    #+#             */
-/*   Updated: 2020/08/21 09:35:11 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/21 13:47:08 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ static	void	print_minus_true_id(char *str, t_info *finfo)
 {
 	if (finfo->precision > 0)
 	{
-		if (finfo->negative == 1)
-			ft_putchar_fd('-', 1);
-		ft_putnchar('0', finfo->extra_zero);
+		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
+		finfo->total_written += ft_putnchar('0', finfo->extra_zero);
 		pf_printf_string_with_precision(finfo, str, finfo->precision);
 		pf_print_width(finfo, finfo->precision);
 	}
@@ -30,11 +29,10 @@ static	void	print_minus_true_id(char *str, t_info *finfo)
 		pf_print_width(finfo, finfo->precision);
 	else
 	{
-		if (finfo->negative == 1)
-			ft_putchar_fd('-', 1);
+		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
 		ft_putstr_fd(str, 1);
-		pf_print_width(finfo, ft_strlen(str));
 		finfo->total_written += ft_strlen(str);
+		pf_print_width(finfo, ft_strlen(str));
 	}
 }
 
@@ -44,25 +42,23 @@ static	void	printf_minus_false_id(char *str, t_info *finfo)
 	{
 		if (finfo->negative == 1 && finfo->width > 0 && finfo->flag_zero == 1)
 		{
-			ft_putchar_fd('-', 1);
+			finfo->total_written += ft_putnchar('-', 1);
 			finfo->negative = 0;
 		}
 		pf_print_width(finfo, finfo->precision);
-		if (finfo->negative == 1)
-			ft_putchar_fd('-', 1);
-		ft_putnchar('0', finfo->extra_zero);
+		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
+		finfo->total_written += ft_putnchar('0', finfo->extra_zero);
 		pf_printf_string_with_precision(finfo, str, finfo->precision);
 	}
 	else
 	{
 		if (finfo->negative == 1 && finfo->width > 0 && finfo->flag_zero == 1)
 		{
-			ft_putchar_fd('-', 1);
+			finfo->total_written += ft_putnchar('-', 1);
 			finfo->negative = 0;
 		}
 		pf_print_width(finfo, (int)ft_strlen(str));
-		if (finfo->negative == 1)
-			ft_putchar_fd('-', 1);
+		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
 		ft_putstr_fd(str, 1);
 		finfo->total_written += ft_strlen(str);
 	}

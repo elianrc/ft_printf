@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 23:36:18 by erc               #+#    #+#             */
-/*   Updated: 2020/08/08 18:33:46 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/21 11:41:28 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_isspace(int c);
 int					ft_atoi(const char *nptr);
 int					ft_atoi_base(const char *str, int base);
+int					ft_putnchar(char c, int n);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int n, int base);
 char				*ft_utoa(unsigned int n);

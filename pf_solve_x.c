@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:40:03 by erc               #+#    #+#             */
-/*   Updated: 2020/08/20 21:11:28 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/21 14:03:48 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ char			*ft_utoa_hex_x(unsigned int n, t_info *finfo)
 
 	len = 1;
 	param = n;
-	if (n == 0)
-	{
-		finfo->null = 1;
-		return ("0");
-	}
 	while (param >= 16)
 	{
 		len++;
@@ -58,10 +53,18 @@ static	void	pf_flag_checker_x(int strlen, char *str, t_info *finfo)
 
 void			pf_solve_hexadecimal(t_info *finfo)
 {
-	char	*str;
-	int		strlen;
+	char				*str;
+	int					strlen;
+	unsigned int		num;
 
-	str = ft_utoa_hex_x(va_arg(finfo->ap, unsigned int), finfo);
+	num = va_arg(finfo->ap, unsigned int);
+	if (num == 0)
+	{
+		str = "0";
+		finfo->null = 1;
+	}
+	else
+		str = ft_utoa_hex_x(num, finfo);
 	strlen = ft_strlen(str);
 	if (finfo->precision > strlen)
 		finfo->extra_zero = finfo->precision - strlen;
