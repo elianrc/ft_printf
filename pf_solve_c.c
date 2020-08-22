@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:36:53 by erc               #+#    #+#             */
-/*   Updated: 2020/08/19 23:30:41 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/21 23:33:27 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,13 @@ void			pf_solve_character(t_info *finfo)
 	pf_flag_checker_c(finfo);
 	if (finfo->flag_minus == 1)
 	{
-		ft_putchar_fd(c, 1);
-		finfo->total_written++;
+		finfo->total_written += ft_putnchar(c, 1);
 		pf_print_width(finfo, 1);
 	}
 	else
 	{
 		pf_print_width(finfo, 1);
-		ft_putchar_fd(c, 1);
-		finfo->total_written++;
+		finfo->total_written += ft_putnchar(c, 1);
 	}
 	finfo->format++;
 }

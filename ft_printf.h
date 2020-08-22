@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/21 18:14:13 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/21 23:29:03 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,11 @@ void				pf_solve_unsigned(t_info *finfo);
 void				pf_solve_hexadecimal(t_info *finfo);
 void				pf_solve_perc(t_info *finfo);
 void				pf_solve_pointer(t_info *finfo);
+
+# if __APPLE__
+#  define IS_MACOS 1
+# else
+#  define IS_MACOS 0
+# endif
 
 #endif

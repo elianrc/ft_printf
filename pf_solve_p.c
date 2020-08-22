@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 00:39:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/20 16:53:34 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/22 00:03:09 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,12 @@ void			pf_solve_pointer(t_info *finfo)
 	void		*address;
 
 	address = va_arg(finfo->ap, void *);
-	if (address == NULL)
+	if (!address)
 	{
-		str = "(nil)";
+		if (IS_MACOS)
+			str = "0x0";
+		else
+			str = "(nil)";
 		finfo->null = 1;
 	}
 	if (finfo->null == 0)
