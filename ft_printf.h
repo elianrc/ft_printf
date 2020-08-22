@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/21 23:29:03 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/22 00:35:25 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "./libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
+
+# define INT_MIN -2147483648
 
 typedef struct		s_info
 {

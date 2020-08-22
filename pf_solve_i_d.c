@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:38:56 by erc               #+#    #+#             */
-/*   Updated: 2020/08/21 13:47:08 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/22 00:41:29 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@
 
 static	void	print_minus_true_id(char *str, t_info *finfo)
 {
-	if (finfo->precision > 0)
+	if (finfo->precision >= 0)
 	{
 		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
 		finfo->total_written += ft_putnchar('0', finfo->extra_zero);
 		pf_printf_string_with_precision(finfo, str, finfo->precision);
 		pf_print_width(finfo, finfo->precision);
 	}
-	else if (finfo->precision == 0)
-		pf_print_width(finfo, finfo->precision);
 	else
 	{
 		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
@@ -85,9 +83,14 @@ void			pf_solve_integer(t_info *finfo)
 	num = va_arg(finfo->ap, int);
 	if (num < 0)
 	{
+		if (num == INT_MIN)
+			finfo->width -= 1;
+		else
+		{
 		finfo->negative = 1;
 		num = num * -1;
 		finfo->width -= 1;
+		}
 	}
 	str = ft_itoa(num);
 	strlen = (int)ft_strlen(str);
