@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 09:43:20 by erc               #+#    #+#             */
-/*   Updated: 2020/08/21 23:35:52 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/22 00:50:49 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static	void	pf_flag_checker_perc(t_info *finfo)
 {
 	if (finfo->width <= 1)
 		finfo->width = 0;
-	if (finfo->flag_zero == 1)
+	if (finfo->flag_zero == 1 && finfo->flag_minus == 1)
 		finfo->flag_zero = 0;
 }
 
