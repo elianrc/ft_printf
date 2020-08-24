@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:38:56 by erc               #+#    #+#             */
-/*   Updated: 2020/08/22 09:28:25 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/24 14:32:10 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,6 @@
 */
 
 #include "ft_printf.h"
-
-static	void	print_minus_true_id(char *str, t_info *finfo)
-{
-	if (finfo->precision >= 0)
-	{
-		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
-		finfo->total_written += ft_putnchar('0', finfo->extra_zero);
-		pf_printf_string_with_precision(finfo, str, finfo->precision);
-		pf_print_width(finfo, finfo->precision);
-	}
-	else
-	{
-		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
-		ft_putstr_fd(str, 1);
-		finfo->total_written += ft_strlen(str);
-		pf_print_width(finfo, ft_strlen(str));
-	}
-}
-
-static	void	printf_minus_false_id(char *str, t_info *finfo)
-{
-	if (finfo->precision >= 0)
-	{
-		if (finfo->negative == 1 && finfo->width > 0 && finfo->flag_zero == 1)
-		{
-			finfo->total_written += ft_putnchar('-', 1);
-			finfo->negative = 0;
-		}
-		pf_print_width(finfo, finfo->precision);
-		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
-		finfo->total_written += ft_putnchar('0', finfo->extra_zero);
-		pf_printf_string_with_precision(finfo, str, finfo->precision);
-	}
-	else
-	{
-		if (finfo->negative == 1 && finfo->width > 0 && finfo->flag_zero == 1)
-		{
-			finfo->total_written += ft_putnchar('-', 1);
-			finfo->negative = 0;
-		}
-		pf_print_width(finfo, (int)ft_strlen(str));
-		finfo->negative == 1 ? finfo->total_written += ft_putnchar('-', 1) : 0;
-		ft_putstr_fd(str, 1);
-		finfo->total_written += ft_strlen(str);
-	}
-}
 
 static	void	pf_flag_checker_id(int strlen, char *str, t_info *finfo)
 {
@@ -104,9 +58,9 @@ void			pf_solve_integer(t_info *finfo)
 		finfo->extra_zero = finfo->precision - strlen;
 	pf_flag_checker_id(strlen, str, finfo);
 	if (finfo->flag_minus == 1)
-		print_minus_true_id(str, finfo);
+		print_minus_true(str, finfo);
 	else
-		printf_minus_false_id(str, finfo);
+		printf_minus_false(str, finfo);
 	free(str);
 	finfo->format++;
 }
