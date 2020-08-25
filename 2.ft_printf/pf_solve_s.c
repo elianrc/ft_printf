@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:36:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/22 09:09:32 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/25 14:18:08 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 #include "ft_printf.h"
 
-static	void	pf_flag_checker_s(char *str, t_info *finfo)
+static	void	pf_flag_checker_s(int strlen, t_info *finfo)
 {
-	if (finfo->width <= (int)ft_strlen(str - finfo->precision))
+	if (finfo->width <= (strlen  - finfo->precision))
 		finfo->width = 0;
-	if (finfo->precision > (int)ft_strlen(str))
-		finfo->precision = (int)ft_strlen(str);
+	if (finfo->precision > strlen)
+		finfo->precision = strlen;
 	if (finfo->flag_zero == 1)
 		finfo->flag_zero = 0;
 }
@@ -29,6 +29,7 @@ static	void	pf_flag_checker_s(char *str, t_info *finfo)
 void			pf_solve_string(t_info *finfo)
 {
 	char		*str;
+	int			strlen;
 
 	str = va_arg(finfo->ap, char *);
 	if (!str)
@@ -39,7 +40,8 @@ void			pf_solve_string(t_info *finfo)
 	}
 	if (finfo->precision == 0)
 		str = "";
-	pf_flag_checker_s(str, finfo);
+	strlen = (int)ft_strlen(str);
+	pf_flag_checker_s(strlen, finfo);
 	if (finfo->flag_minus == 1)
 		print_minus_true(str, finfo);
 	else
