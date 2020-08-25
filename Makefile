@@ -6,7 +6,7 @@
 #    By: erc <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/03 08:29:24 by erc               #+#    #+#              #
-#    Updated: 2020/08/25 12:57:29 by erc              ###   ########.fr        #
+#    Updated: 2020/08/25 14:36:12 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,6 @@ clean:
 
 fclean: clean
 	@echo Deleting $(NAME)...
-	@/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME) ft_printf.h.gch
 
 re: fclean all
