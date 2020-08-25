@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:38:56 by erc               #+#    #+#             */
-/*   Updated: 2020/08/24 23:55:57 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/25 01:35:43 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 static	void	pf_flag_checker_id(int strlen, char *str, t_info *finfo)
 {
-	if (finfo->precision != -1 && finfo->precision < strlen && *str != '0')
+	if (finfo->precision > -1 && finfo->precision < strlen && *str != '0')
 		finfo->precision = strlen;
 	if (finfo->flag_zero == 1 && finfo->flag_minus == 1)
 		finfo->flag_zero = 0;
