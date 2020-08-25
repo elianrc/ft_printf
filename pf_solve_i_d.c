@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:38:56 by erc               #+#    #+#             */
-/*   Updated: 2020/08/24 17:27:01 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/24 17:46:14 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	void	pf_flag_checker_id(int strlen, char *str, t_info *finfo)
 	if (finfo->flag_zero == 1 && finfo->flag_minus == 1)
 		finfo->flag_zero = 0;
 	if (!IS_MACOS)
-		if (finfo->flag_zero == 1 && finfo->precision > 0)
+		if (finfo->flag_zero == 1 && finfo->precision >= 0)
 			finfo->flag_zero = 0;
 	if (finfo->width == strlen && *str != '0')
 		finfo->width = 0;
