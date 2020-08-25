@@ -28,8 +28,8 @@ int main(void)
     // ft_printf("|%-5.d|\n", 0);
     // printf("|%-5.d|\n", 0);
 
-    ft_printf("|%0*.*d|\n", 1, 0, 0);
-    printf("|%0*.*d|\n", 1, 0, 0);
+    ft_printf("|%0*.*i|\n", 3, -2, 8);
+    printf("|%0*.*i|\n", 3, -2, 8);
 
 
     return (0);
