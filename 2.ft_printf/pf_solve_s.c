@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 23:36:43 by erc               #+#    #+#             */
-/*   Updated: 2020/08/25 14:28:24 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/25 14:39:12 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 static	void	pf_flag_checker_s(int strlen, char *str, t_info *finfo)
 {
-	if (finfo->width <= (int)ft_strlen(str  - finfo->precision))
+	if (finfo->width <= (int)ft_strlen(str - finfo->precision))
 		finfo->width = 0;
 	if (finfo->precision > strlen)
 		finfo->precision = strlen;
