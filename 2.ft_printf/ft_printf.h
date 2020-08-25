@@ -6,14 +6,14 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 08:08:28 by erc               #+#    #+#             */
-/*   Updated: 2020/08/24 14:31:38 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/25 12:58:16 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "./libft/libft.h"
+# include "../1.libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
 

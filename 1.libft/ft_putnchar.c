@@ -6,7 +6,7 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 17:24:34 by erc               #+#    #+#             */
-/*   Updated: 2020/08/21 11:40:30 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/25 13:10:06 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	ft_putnchar(char c, int n)
 		ft_putchar_fd(c, 1);
 		total_written++;
 	}
-	return total_written;
+	return (total_written);
 }

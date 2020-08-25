@@ -6,13 +6,13 @@
 #    By: erc <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/03 08:29:24 by erc               #+#    #+#              #
-#    Updated: 2020/08/14 23:36:46 by erc              ###   ########.fr        #
+#    Updated: 2020/08/25 12:57:29 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
 
-SRCS=./libft/ft*.c ft*.c pf*.c
+SRCS=./1.libft/ft*.c ./2.ft_printf/pf*.c ./2.ft_printf/ft*.c
 
 OBJS=ft*.o pf*.o
 

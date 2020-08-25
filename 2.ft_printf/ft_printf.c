@@ -6,15 +6,17 @@
 /*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:47:22 by erc               #+#    #+#             */
-/*   Updated: 2020/08/14 14:25:52 by erc              ###   ########.fr       */
+/*   Updated: 2020/08/25 13:08:31 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**__Core of the function__
-**-Understanding <stdarg.h> is a first.
-**-"finfo" stands for "format info".
-**-Only working on mandatory part for now.
+**	Recode of stdio library, printf().
+**
+**  This function manages the following conversions: cspdiuxX%
+**
+**	It also manages any combinations of the
+**	following flags: -0.* and minimum field width
 */
 
 #include "ft_printf.h"
