@@ -77,10 +77,10 @@ I had many sources of information but the main ones would be:
 ![result_by_mounlinette](3.test/img/result.jpg)
 ## :smile: Special Thanks
 I want to thank God in the first place for all the special people that helped me through this project:
-* @edithturn
-* @michaelgiraldo
-* @alineayumi
-* @piratelicorne
-* @geekMe82
+* [@edithturn](https://github.com/edithturn)
+* [@michaelgiraldo](https://github.com/michaelgiraldo)
+* [@alineayumi](https://github.com/alineayumi)
+* [@piratelicorne](https://github.com/piratelicorne)
+* [@geekMe82](https://github.com/geekMe82)
 ### Thanks so much. It would have been very different without your help.
 # **SOLI DEO GLORIA**
