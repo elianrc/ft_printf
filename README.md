@@ -1,3 +1,4 @@
+# ![ft_printf_logo](3.test/img/printf_logo.png)
 This project is a **recode of stdio's 'printf' function** in accordance with the 42 code norm.
 
 ## :dart: Subject
