@@ -73,7 +73,7 @@ I had many sources of information but the main ones would be:
 * https://en.wikipedia.org/wiki/Stdarg.h
 * https://en.wikipedia.org/wiki/Printf_format_string
 * [This Google Document](https://docs.google.com/document/d/1znc7N5ua3WC1PhGcirRhtadHYSrPK3wxTApMdlJXYes/edit?pli=1#)
-## :heavy_check_mark: Mounlinette
+## :heavy_check_mark: Moulinette
 ![result_by_mounlinette](3.test/img/result.jpg)
 ## :smile: Special Thanks
 I want to thank God in the first place for all the special people that helped me through this project:
